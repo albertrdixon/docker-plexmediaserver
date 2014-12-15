@@ -97,7 +97,7 @@ trap cleanup EXIT 2 9 15
 # commit    Sign in
 
 # If user wants, we skip authentication, but only if previous auth exists
-if [[ ! -f /tmp/kaka ]] && [[ "${PUBLIC}" == "no" ]]; then
+if [[ ! -f /tmp/kaka ]] && [[ "${PUBLIC}" =~ "^[nN]" ]]; then
   echo -n "Authenticating..."
   # Clean old session
   rm /tmp/kaka 2>/dev/null
@@ -154,7 +154,7 @@ if [ $? -ne 0 ]; then
   exit 3
 fi
 
-if [[ "$FILENAME" == "$(cat /etc/plexupdate/version 2>/dev/null)" ]] && [[ "$FORCE" != "yes" ]]; then
+if [[ "$FILENAME" == "$(cat /etc/plexupdate/version 2>/dev/null)" ]] && [[ ! "$FORCE" =~ "^[yY]" ]]; then
   echo "$FILENAME is current installed version. Bailing."
   exit 0
 else
@@ -176,7 +176,7 @@ if [[ -e /first_run ]]; then
   rm -f /usr/sbin/start_pms
   rm -f /first_run
   rm -f "${DOWNLOADDIR}/${FILENAME}"
-elif [[ "${AUTOINSTALL}" == "yes" ]]; then
+elif [[ "${AUTOINSTALL}" =~ "^[yY]" ]]; then
   supervisorctl stop plexmediaserver
   dpkg -i "${DOWNLOADDIR}/${FILENAME}"
   stop plexmediaserver

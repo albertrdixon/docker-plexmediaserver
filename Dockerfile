@@ -19,11 +19,11 @@ ADD scripts/docker-start /usr/local/bin/
 ADD scripts/plexupdate.sh /usr/local/bin/
 ADD scripts/start_pms /usr/local/bin/
 RUN bash -c "chmod a+rx /usr/local/bin/*" &&\
-    mkdir -p /plexupdate /plexmediaserver /logs &&\
+    mkdir -p /plexupdate /plexmediaserver &&\
     touch /first_run
 
 ENTRYPOINT ["docker-start"]
-VOLUME ["/logs"]
+VOLUME ["/plexmediaserver"]
 EXPOSE 32400 1900 5353 32410 32412 32413 32414 32469
 
 ENV DOWNLOADDIR         /plexupdate
