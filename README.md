@@ -21,7 +21,6 @@ $ docker run -d -p 32400:32400 -v /path/to/plex:/plexmediaserver albertdixon/ple
 | `PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS` | 6 | |
 | `PLEX_MEDIA_SERVER_MAX_STACK_SIZE` | 4000 | |
 | `PLEX_MEDIA_SERVER_TMPDIR` | /tmp | |
-|----------|---------------|-------------|
 | `AUTOINSTALL` | yes | Don't change this, auto installs updates |
 | `DOWNLOADDIR` | /plexupdate | Where update packages are downloaded to |
 | `FORCE` | no | Force install updates |
