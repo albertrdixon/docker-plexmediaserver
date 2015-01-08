@@ -39,12 +39,6 @@
 
 : ${PKGEXT:='.deb'}
 
-# Sanity, make sure wget is in our path...
-if wget >/dev/null 2>/dev/null; then
-  echo "Error: This script requires wget in the path. It could also signify that you don't have the tool installed."
-  exit 1
-fi
-
 # Sanity check
 if [ -z "${PLEX_USERNAME}" -o -z "${PLEX_PASSWORD}" ] && [[ "${PUBLIC}" == "no" ]]; then
   echo "Error: Need username & password to download PlexPass version. Otherwise run with -p to download public version."

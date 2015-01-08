@@ -22,6 +22,6 @@ function main {
   esac
 }
 
-ulimit -n 65535
+ulimit -n 32768
 main "$@"
 exit 0

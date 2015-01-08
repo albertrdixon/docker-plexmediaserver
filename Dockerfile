@@ -34,7 +34,7 @@ ENV RELEASE             64-bit
 ENV URL_LOGIN           https://plex.tv/users/sign_in
 ENV URL_DOWNLOAD        https://plex.tv/downloads?channel=plexpass
 ENV URL_DOWNLOAD_PUBLIC https://plex.tv/downloads
-ENV UPDATE_TIME         1:00
+ENV UPDATE_TIME         3:00
 
 ENV PLEX_MEDIA_SERVER_HOME                    /usr/lib/plexmediaserver
 ENV PLEX_MEDIA_SERVER_USER                    root
