@@ -18,7 +18,7 @@ ADD scripts/clock.rb /root/
 ADD scripts/docker-start /usr/local/bin/
 ADD scripts/plexupdate.sh /usr/local/bin/
 ADD scripts/start_pms /usr/local/bin/
-RUN bash -c "chmod a+rx /usr/local/bin/*" &&\
+RUN chmod a+rx /usr/local/bin/* &&\
     mkdir -p /plexupdate /plexmediaserver &&\
     touch /first_run
 
